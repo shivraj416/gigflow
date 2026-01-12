@@ -49,12 +49,12 @@ export const login = async (req, res) => {
       process.env.JWT_SECRET
     );
 
-    // ✅ SAFE COOKIE + SAFE RESPONSE
+    // SAFE COOKIE + SAFE RESPONSE
     res
       .cookie("token", token, {
         httpOnly: true,
-        sameSite: "lax",
-        secure: false,
+        secure: true,          //  required on HTTPS
+        sameSite: "none",
         path: "/"
       })
       .json({
