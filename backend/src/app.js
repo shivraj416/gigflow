@@ -21,12 +21,11 @@ app.use(
     cors({
         origin: [
             "http://localhost:5173",
-            "https://gigflow-eta.vercel.app"
+            "https://gigflow-rho.vercel.app"
         ],
         credentials: true
     })
 );
-
 
 /* ================= TEST ROUTE ================= */
 
