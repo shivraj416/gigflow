@@ -1,0 +1,729 @@
+/* GLOBAL RESET & BASE */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f5f5;
+    color: #222;
+}
+
+/* ===================== */
+/* NAVBAR */
+/* ===================== */
+.navbar {
+    background: #222;
+    padding: 12px 20px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.navbar a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+/* ===================== */
+/* PAGE LAYOUT */
+/* ===================== */
+.container {
+    padding: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* ===================== */
+/* CARD */
+/* ===================== */
+.card {
+    background: #ffffff;
+    padding: 15px;
+    margin-top: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* ===================== */
+/* AUTH PAGES (LOGIN / REGISTER) */
+/* ===================== */
+.auth-wrapper {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.auth-card {
+    background: #ffffff;
+    padding: 30px;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.auth-card h2 {
+    margin: 0;
+    font-size: 24px;
+    text-align: center;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+    margin: 8px 0 20px;
+}
+
+/* FORM ELEMENTS */
+.auth-card label {
+    font-size: 14px;
+    margin-top: 14px;
+    display: block;
+}
+
+.auth-card input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.auth-card input:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+/* BUTTON */
+.auth-card button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    background: #667eea;
+    border: none;
+    color: white;
+    font-size: 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.auth-card button:hover:not(:disabled) {
+    background: #5a67d8;
+}
+
+.auth-card button:disabled {
+    background: #aaa;
+    cursor: not-allowed;
+}
+
+/* FOOTER TEXT */
+.footer-text {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.footer-text a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer-text a:hover {
+    text-decoration: underline;
+}
+
+/* ERROR MESSAGE */
+.error-box {
+    background: #ffe5e5;
+    color: #d8000c;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+/* ===================== */
+/* PASSWORD FIELD WITH ICON */
+/* ===================== */
+.password-wrapper {
+    position: relative;
+}
+
+.password-wrapper input {
+    width: 100%;
+    padding-right: 40px;
+}
+
+.eye-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 16px;
+    user-select: none;
+}
+
+/* LOGIN PAGE BACKGROUND (Different from Register) */
+.login-bg {
+    background: linear-gradient(135deg, #11998e, #38ef7d);
+}
+
+
+/* ===================== */
+/* DASHBOARD */
+/* ===================== */
+.dashboard-header {
+    margin-bottom: 20px;
+}
+
+.dashboard-header h1 {
+    margin: 0;
+    font-size: 26px;
+}
+
+.dashboard-header p {
+    margin-top: 4px;
+    color: #666;
+    font-size: 14px;
+}
+
+.gig-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 15px;
+}
+
+/* STATUS TEXT */
+.status-text {
+    font-size: 14px;
+    color: #555;
+}
+
+.status-text.error {
+    color: #d8000c;
+}
+
+/* EMPTY STATE */
+.empty-state {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 6px;
+    text-align: center;
+    border: 1px dashed #ccc;
+}
+
+.empty-state h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.empty-state p {
+    margin-top: 6px;
+    color: #666;
+    font-size: 14px;
+}
+
+
+/* ===================== */
+/* GIG DETAILS */
+/* ===================== */
+.gig-header {
+    margin-bottom: 20px;
+}
+
+.gig-header h1 {
+    margin: 0;
+    font-size: 26px;
+}
+
+.gig-header p {
+    margin-top: 4px;
+    color: #666;
+    font-size: 14px;
+}
+
+/* BID FORM */
+.bid-form-card {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+
+.bid-form-card h3 {
+    margin-top: 0;
+    font-size: 18px;
+}
+
+.bid-form-card textarea {
+    width: 100%;
+    height: 90px;
+    padding: 10px;
+    margin-top: 10px;
+    resize: none;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-family: inherit;
+}
+
+.bid-form-card input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.bid-form-card button {
+    margin-top: 15px;
+    padding: 10px;
+    background: #667eea;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.bid-form-card button:disabled {
+    background: #aaa;
+    cursor: not-allowed;
+}
+
+/* BID LIST */
+.bid-list {
+    display: grid;
+    gap: 12px;
+}
+
+
+/* ===================== */
+/* PAGE HEADERS */
+/* ===================== */
+.dashboard-header {
+    margin-bottom: 20px;
+}
+
+.dashboard-header h1 {
+    margin: 0;
+    font-size: 26px;
+}
+
+.dashboard-header p {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #666;
+}
+
+/* ===================== */
+/* FORM CARD (Create Gig & Bid Form) */
+/* ===================== */
+.bid-form-card {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    max-width: 600px;
+}
+
+.bid-form-card label {
+    display: block;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.bid-form-card input,
+.bid-form-card textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    font-family: inherit;
+}
+
+.bid-form-card textarea {
+    resize: none;
+    height: 90px;
+}
+
+.bid-form-card input:focus,
+.bid-form-card textarea:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+/* ===================== */
+/* BUTTON */
+/* ===================== */
+.bid-form-card button {
+    margin-top: 20px;
+    padding: 10px 18px;
+    background: #667eea;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.bid-form-card button:hover:not(:disabled) {
+    background: #5a67d8;
+}
+
+.bid-form-card button:disabled {
+    background: #aaa;
+    cursor: not-allowed;
+}
+
+/* ===================== */
+/* EMPTY STATE */
+/* ===================== */
+.empty-state {
+    margin-top: 20px;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 6px;
+    border: 1px dashed #ccc;
+    text-align: center;
+}
+
+.empty-state h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.empty-state p {
+    margin-top: 6px;
+    font-size: 14px;
+    color: #666;
+}
+
+/* ===================== */
+/* STATUS TEXT */
+/* ===================== */
+.status-text {
+    font-size: 14px;
+    margin-top: 10px;
+    color: #555;
+}
+
+.status-text.error {
+    color: #d8000c;
+}
+
+/* ===================== */
+/* DASHBOARD TOP BAR */
+/* ===================== */
+.dashboard-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.user-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.user-name {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.user-box button {
+    padding: 6px 12px;
+    background: #e53e3e;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.user-box button:hover {
+    background: #c53030;
+}
+
+/* ===================== */
+/* TOAST NOTIFICATION */
+/* ===================== */
+.toast {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    min-width: 250px;
+    padding: 12px 16px;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 14px;
+    z-index: 1000;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    animation: slideIn 0.3s ease;
+}
+
+.toast-info {
+    background: #3182ce;
+}
+
+.toast-success {
+    background: #38a169;
+}
+
+.toast-error {
+    background: #e53e3e;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(120%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* ===================== */
+/* CREATE GIG LAYOUT */
+/* ===================== */
+.create-gig-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: stretch;
+}
+
+/* IMAGE SECTION */
+.create-gig-image {
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+    height: 100%;
+}
+
+.create-gig-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* OVERLAY TEXT */
+.image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.55),
+            rgba(0, 0, 0, 0.25));
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+}
+
+.image-overlay h3 {
+    margin: 0;
+    font-size: 22px;
+}
+
+.image-overlay p {
+    margin-top: 6px;
+    font-size: 14px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .create-gig-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .create-gig-image {
+        height: 220px;
+    }
+}
+
+/* ===================== */
+/* DASHBOARD HERO */
+/* ===================== */
+.dashboard-hero {
+    margin: 20px 0;
+    padding: 30px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+}
+
+.hero-text h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.hero-text p {
+    margin-top: 8px;
+    font-size: 14px;
+    max-width: 600px;
+}
+
+/* ===================== */
+/* STATS */
+/* ===================== */
+.dashboard-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.stat-card {
+    background: white;
+    border-radius: 6px;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.stat-card h3 {
+    margin: 0;
+    font-size: 26px;
+    color: #667eea;
+}
+
+.stat-card p {
+    margin-top: 6px;
+    font-size: 14px;
+    color: #666;
+}
+
+/* ===================== */
+/* GIG SECTION */
+/* ===================== */
+.dashboard-section h2 {
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+/* ===================== */
+/* FORGOT PASSWORD BACKGROUND */
+/* ===================== */
+.forgot-bg {
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.45),
+            rgba(0, 0, 0, 0.45)
+        ),
+        url("https://images.unsplash.com/photo-1501785888041-af3ef285b470");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* ===================== */
+/* ACCOUNT PAGE NIGHT SKY */
+/* ===================== */
+.account-bg {
+    min-height: 100vh;
+    background:
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url("https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Dark overlay for depth */
+.account-overlay {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Centered container */
+.account-container {
+    width: 100%;
+    max-width: 520px;
+    padding: 20px;
+}
+
+/* Header */
+.account-header {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #fff;
+}
+
+.account-header h1 {
+    font-size: 28px;
+    margin-bottom: 6px;
+}
+
+.account-header p {
+    font-size: 14px;
+    opacity: 0.85;
+}
+
+/* Glassmorphism card */
+.account-card {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(16px);
+    border-radius: 14px;
+    padding: 24px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.45);
+    border: 1px solid rgba(255,255,255,0.25);
+    animation: fadeUp 0.8s ease;
+}
+
+/* Row layout */
+.account-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.25);
+}
+
+.account-row:last-child {
+    border-bottom: none;
+}
+
+/* Labels & values */
+.label {
+    font-size: 14px;
+    color: #e5e7eb;
+}
+
+.value {
+    font-size: 15px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+/* Entry animation */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
